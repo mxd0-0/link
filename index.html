@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,9 +12,13 @@
             --white: #FFFFFF;
         }
 
-        body {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
             background-color: var(--black);
             color: var(--white);
             font-family: Arial, sans-serif;
@@ -24,16 +27,27 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            width: 100%;
             position: relative;
-            overflow: hidden;
+            overflow-x: hidden; /* Prevents horizontal scroll */
+            text-align: center;
+            padding: 20px;
         }
 
         /* Background Animation */
-        .background svg {
+        .background {
             position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             opacity: 0.08;
+            z-index: -1;
+        }
+
+        .background svg {
+            width: 100%;
+            height: 100%;
         }
 
         .shape {
@@ -44,12 +58,17 @@
         }
 
         @keyframes moveShapes {
-            0% { transform: translateY(0px) rotate(0deg); }
-            100% { transform: translateY(20px) rotate(5deg); }
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            100% {
+                transform: translateY(20px) rotate(5deg);
+            }
         }
 
+
         h1 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: bold;
             text-align: center;
         }
@@ -57,81 +76,89 @@
         .badge {
             background-color: var(--yellow);
             color: var(--black);
-            padding: 5px 15px;
+            padding: 8px 20px;
             border-radius: 15px;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 1rem;
             margin-bottom: 20px;
         }
+
 
         .links {
             display: flex;
             flex-direction: column;
             gap: 15px;
             width: 90%;
-            max-width: 300px;
+            max-width: 350px;
         }
 
         .link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            width: 100%;
+            transition: 0.3s ease;
+            position: relative;
             background-color: var(--white);
             color: var(--black);
-            padding: 15px;
             border-radius: 10px;
             text-decoration: none;
             font-weight: bold;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center; /* Center align text */
-            transition: 0.3s;
-            width: 100%; /* Ensure the link takes the full width of the container */
-            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+            font-size: 1.1rem;
         }
 
-        .link:hover {
+        .link:hover, .link:active {
             background-color: var(--yellow);
+            transform: scale(1.05);
+            border: 3px solid var(--white);
         }
+
 
         .icon {
             margin-left: 10px;
         }
 
+        /* Footer */
         .footer {
             margin-top: 30px;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             color: var(--yellow);
         }
 
-        /* Media Queries for Responsiveness */
+
         @media (max-width: 768px) {
             h1 {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
+                padding-bottom: 10px;
             }
 
             .badge {
-                font-size: 0.8rem;
-                padding: 5px 10px;
+                font-size: 0.9rem;
+                padding: 6px 15px;
             }
 
             .link {
-                padding: 10px;
-                font-size: 0.9rem;
+                padding: 12px;
+                font-size: 1rem;
             }
         }
 
         @media (max-width: 480px) {
             h1 {
-                font-size: 1.2rem;
+                font-size: 1.5rem;
+                padding-bottom: 20px;
             }
 
             .badge {
-                font-size: 0.7rem;
-                padding: 3px 8px;
+                font-size: 0.8rem;
+                padding: 5px 12px;
             }
 
             .link {
-                padding: 8px;
-                font-size: 0.8rem;
+                padding: 12px;
+                font-size: 0.9rem;
+                border-radius: 8px;
             }
         }
     </style>
@@ -149,21 +176,21 @@
     </svg>
 </div>
 
+<!-- Main Content -->
 <h1>MOHAMMED AMINE ARAOU</h1>
 <div class="badge">ANDROID DEVELOPER</div>
 
 <div class="links">
-    <a href="https://github.com/yourusername" class="link" target="_blank">
+    <a href="https://github.com/mxd0-0" class="link" target="_blank">
         GitHub <span class="icon"><i class="fab fa-github"></i></span>
     </a>
-    <a href="https://linkedin.com/in/yourusername" class="link" target="_blank">
+    <a href="https://www.linkedin.com/in/mohammed-araou/" class="link" target="_blank">
         LinkedIn <span class="icon"><i class="fab fa-linkedin"></i></span>
     </a>
-    <a href="mailto:your@email.com" class="link">
-        Email <span class="icon"><i class="fas fa-envelope"></i></span>
-    </a>
+    <!--  <a href="araou.mohamed2004@gmail.com" class="link">
+          Email <span class="icon"><i class="fas fa-envelope"></i></span>
+      </a> -->
 </div>
-
 
 </body>
 </html>
