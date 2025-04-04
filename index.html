@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Links</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --black: #000000;
+            --yellow: #FFC823;
+            --white: #FFFFFF;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--black);
+            color: var(--white);
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Background Animation */
+        .background svg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.08;
+        }
+
+        .shape {
+            stroke: var(--yellow);
+            fill: none;
+            stroke-width: 0.5;
+            animation: moveShapes 10s infinite alternate ease-in-out;
+        }
+
+        @keyframes moveShapes {
+            0% { transform: translateY(0px) rotate(0deg); }
+            100% { transform: translateY(20px) rotate(5deg); }
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .badge {
+            background-color: var(--yellow);
+            color: var(--black);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 90%;
+            max-width: 300px;
+        }
+
+        .link {
+            background-color: var(--white);
+            color: var(--black);
+            padding: 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center align text */
+            transition: 0.3s;
+            width: 100%; /* Ensure the link takes the full width of the container */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+
+        .link:hover {
+            background-color: var(--yellow);
+        }
+
+        .icon {
+            margin-left: 10px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: var(--yellow);
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .badge {
+                font-size: 0.8rem;
+                padding: 5px 10px;
+            }
+
+            .link {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.2rem;
+            }
+
+            .badge {
+                font-size: 0.7rem;
+                padding: 3px 8px;
+            }
+
+            .link {
+                padding: 8px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Animated Background -->
+<div class="background">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect x="10" y="10" width="30" height="30" class="shape"/>
+        <rect x="50" y="50" width="40" height="40" class="shape"/>
+        <polygon points="20,80 40,50 70,90" class="shape"/>
+        <line x1="10" y1="90" x2="90" y2="10" class="shape"/>
+        <polygon points="30,10 70,10 50,50" class="shape"/>
+    </svg>
+</div>
+
+<h1>MOHAMMED AMINE ARAOU</h1>
+<div class="badge">ANDROID DEVELOPER</div>
+
+<div class="links">
+    <a href="https://github.com/yourusername" class="link" target="_blank">
+        GitHub <span class="icon"><i class="fab fa-github"></i></span>
+    </a>
+    <a href="https://linkedin.com/in/yourusername" class="link" target="_blank">
+        LinkedIn <span class="icon"><i class="fab fa-linkedin"></i></span>
+    </a>
+    <a href="mailto:your@email.com" class="link">
+        Email <span class="icon"><i class="fas fa-envelope"></i></span>
+    </a>
+</div>
+
+
+</body>
+</html>
