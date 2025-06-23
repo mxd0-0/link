@@ -17,7 +17,7 @@ const Hero = () => {
           <h1 className={`${styles.heroHeadText} text-white`}>
             Hi, I'm <span className="text-[#915EFF]">Mohammed Amine</span>
           </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+          <div className={`${styles.heroSubText} mt-2 text-white-100`}>
             I do
             <Typewriter
               options={{
@@ -29,7 +29,7 @@ const Hero = () => {
                 pauseFor: 1000,
               }}
             />
-          </p>
+          </div>
         </div>
       </div>
 
